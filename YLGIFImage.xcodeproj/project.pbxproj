@@ -18,8 +18,8 @@
 		DFB903E318C3397F008E8DD4 /* YLGIFImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB903E218C3397F008E8DD4 /* YLGIFImageTests.m */; };
 		DFB903ED18C3404A008E8DD4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB903EC18C3404A008E8DD4 /* UIKit.framework */; };
 		DFB903EF18C34051008E8DD4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB903EE18C34051008E8DD4 /* CoreGraphics.framework */; };
-		DFB903F218C34158008E8DD4 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB903F118C34158008E8DD4 /* YLImageView.m */; };
-		DFB903F318C34158008E8DD4 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB903F118C34158008E8DD4 /* YLImageView.m */; };
+		DFB903F218C34158008E8DD4 /* UIImageView+Gif.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB903F118C34158008E8DD4 /* UIImageView+Gif.m */; };
+		DFB903F318C34158008E8DD4 /* UIImageView+Gif.m in Sources */ = {isa = PBXBuildFile; fileRef = DFB903F118C34158008E8DD4 /* UIImageView+Gif.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,8 @@
 		DFB903E218C3397F008E8DD4 /* YLGIFImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLGIFImageTests.m; sourceTree = "<group>"; };
 		DFB903EC18C3404A008E8DD4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DFB903EE18C34051008E8DD4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DFB903F018C34158008E8DD4 /* YLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLImageView.h; sourceTree = "<group>"; };
-		DFB903F118C34158008E8DD4 /* YLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLImageView.m; sourceTree = "<group>"; };
+		DFB903F018C34158008E8DD4 /* UIImageView+Gif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Gif.h"; sourceTree = "<group>"; };
+		DFB903F118C34158008E8DD4 /* UIImageView+Gif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Gif.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +123,8 @@
 			children = (
 				DFB903CB18C3397F008E8DD4 /* YLGIFImage.h */,
 				DFB903CD18C3397F008E8DD4 /* YLGIFImage.m */,
-				DFB903F018C34158008E8DD4 /* YLImageView.h */,
-				DFB903F118C34158008E8DD4 /* YLImageView.m */,
+				DFB903F018C34158008E8DD4 /* UIImageView+Gif.h */,
+				DFB903F118C34158008E8DD4 /* UIImageView+Gif.m */,
 			);
 			path = YLGIFImage;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB903CE18C3397F008E8DD4 /* YLGIFImage.m in Sources */,
-				DFB903F218C34158008E8DD4 /* YLImageView.m in Sources */,
+				DFB903F218C34158008E8DD4 /* UIImageView+Gif.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFB903E318C3397F008E8DD4 /* YLGIFImageTests.m in Sources */,
-				DFB903F318C34158008E8DD4 /* YLImageView.m in Sources */,
+				DFB903F318C34158008E8DD4 /* UIImageView+Gif.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
