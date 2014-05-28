@@ -4,8 +4,8 @@ Pod::Spec.new do |s|
   s.summary      = "Async GIF Image decoder and ImageView which supports playing GIF image."
   s.homepage     = "https://github.com/liyong03/YLGIFImage"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { "liyong03" => "liyong03@gmail.com" }
-  s.source       = { :git => "https://github.com/liyong03/YLGIFImage.git", :tag => s.version.to_s }
+  s.author       = { "liyong03" => "liyong03@gmail.com", "nico" =>"nico.objc@gmail.com"}
+  s.source       = { :git => "https://github.com/demon1105/YLGIFImage.git", :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
   s.source_files =  'YLGIFImage'
   s.frameworks   = 'Foundation', 'UIKit', 'MobileCoreServices', 'ImageIO', 'CoreGraphics'
