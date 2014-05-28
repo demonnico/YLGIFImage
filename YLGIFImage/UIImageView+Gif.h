@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YLImageView : UIImageView
+@interface UIImageView (Gif)
 
 @property (nonatomic, copy) NSString *runLoopMode;
 
