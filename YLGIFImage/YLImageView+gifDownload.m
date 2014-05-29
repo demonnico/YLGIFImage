@@ -73,6 +73,8 @@
                                                                                             imageData:data
                                                                                                forKey:url
                                                                                                toDisk:YES];
+                                                         if (completedBlock)
+                                                             completedBlock(image,data,error,finished);
                                                      } cancelled:cancelBlock];
         [self.operationQueue addOperation:self.downloader];
     }
