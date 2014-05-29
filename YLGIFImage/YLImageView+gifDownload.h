@@ -13,7 +13,7 @@
 @interface YLImageView (gifDownload)
 -(void)downloadGIFImageWithURL:(NSString*)url
               placeholderImage:(UIImage*)image
-                      progress:(void (^)(NSInteger, NSInteger))progressBlock
-                     completed:(void (^)(UIImage *, NSData *, NSError *, BOOL))completedBlock
+                      progress:(void (^)(NSInteger receivedSize, NSInteger expectedSize))progressBlock
+                     completed:(void (^)(UIImage *image, NSData *data, NSError *error, BOOL finished))completedBlock
                      cancelled:(void (^)())cancelBlock;
 @end
