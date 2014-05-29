@@ -16,6 +16,7 @@
 
 @interface YLImageView()
 @property (nonatomic,strong) SDWebImageDownloaderOperation * downloader;
+@property (nonatomic,strong) NSOperationQueue * operationQueue;
 @end
 
 @implementation YLImageView (gifDownload)
@@ -28,6 +29,16 @@
 -(SDWebImageDownloaderOperation*)downloader
 {
     return objc_getAssociatedObject(self, _cmd);
+}
+
+-(NSOperationQueue*)operationQueue
+{
+    NSOperationQueue * queue = objc_getAssociatedObject(self, _cmd);
+    if (!queue) {
+        queue = [[NSOperationQueue alloc] init];
+        objc_setAssociatedObject(self, _cmd, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return queue;
 }
 
 -(void)downloadGIFImageWithURL:(NSString*)url
@@ -63,7 +74,7 @@
                                                                                                forKey:url
                                                                                                toDisk:YES];
                                                      } cancelled:cancelBlock];
+        [self.operationQueue addOperation:self.downloader];
     }
-    [self.downloader start];
 }
 @end
