@@ -64,5 +64,6 @@
                                                                                                toDisk:YES];
                                                      } cancelled:cancelBlock];
     }
+    [self.downloader start];
 }
 @end
