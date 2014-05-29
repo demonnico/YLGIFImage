@@ -62,12 +62,13 @@
         completedBlock(self.image,gifImageData,nil,YES);
     }else{
         NSURL * URL = [NSURL URLWithString:url];
+        __weak __typeof(&*self)weakSelf = self;
         self.downloader =
         [[SDWebImageDownloaderOperation alloc] initWithRequest:[NSURLRequest requestWithURL:URL]
                                                        options:SDWebImageDownloaderLowPriority
                                                       progress:progressBlock
                                                      completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                                                         self.image = [YLGIFImage imageWithData:data];
+                                                         weakSelf.image = [YLGIFImage imageWithData:data];
                                                           [[SDImageCache sharedImageCache] storeImage:self.image
                                                                                  recalculateFromImage:NO
                                                                                             imageData:data
