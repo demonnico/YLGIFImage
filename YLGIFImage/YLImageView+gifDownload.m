@@ -8,6 +8,7 @@
 
 #import "YLImageView+gifDownload.h"
 #import <SDImageCache.h>
+#import <objc/runtime.h>
 
 @interface SDImageCache(privateMethods)
 - (NSData *)diskImageDataBySearchingAllPathsForKey:(NSString *)key;
@@ -18,6 +19,17 @@
 @end
 
 @implementation YLImageView (gifDownload)
+
+-(void)setDownloader:(SDWebImageDownloaderOperation *)downloader
+{
+    objc_setAssociatedObject(self, @selector(downloader), downloader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(SDWebImageDownloaderOperation*)downloader
+{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
 -(void)downloadGIFImageWithURL:(NSString*)url
               placeholderImage:(UIImage*)image
                       progress:(void (^)(NSInteger receivedSize, NSInteger expectedSize))progressBlock
