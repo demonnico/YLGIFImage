@@ -68,14 +68,16 @@
                                                        options:SDWebImageDownloaderLowPriority
                                                       progress:progressBlock
                                                      completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                                                         weakSelf.image = [YLGIFImage imageWithData:data];
-                                                          [[SDImageCache sharedImageCache] storeImage:self.image
-                                                                                 recalculateFromImage:NO
-                                                                                            imageData:data
-                                                                                               forKey:url
-                                                                                               toDisk:YES];
-                                                         if (completedBlock)
-                                                             completedBlock(image,data,error,finished);
+                                                         dispatch_main_sync_safe(^(){
+                                                             weakSelf.image = [YLGIFImage imageWithData:data];
+                                                             [[SDImageCache sharedImageCache] storeImage:self.image
+                                                                                    recalculateFromImage:NO
+                                                                                               imageData:data
+                                                                                                  forKey:url
+                                                                                                  toDisk:YES];
+                                                             if (completedBlock)
+                                                                 completedBlock(image,data,error,finished);
+                                                         });
                                                      } cancelled:cancelBlock];
         [self.operationQueue addOperation:self.downloader];
     }
