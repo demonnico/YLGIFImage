@@ -82,4 +82,8 @@
         [self.operationQueue addOperation:self.downloader];
     }
 }
+-(void)cancelGIFDownload
+{
+    [self.downloader cancel];
+}
 @end

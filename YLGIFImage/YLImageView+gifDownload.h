@@ -16,4 +16,5 @@
                       progress:(void (^)(NSInteger receivedSize, NSInteger expectedSize))progressBlock
                      completed:(void (^)(UIImage *image, NSData *data, NSError *error, BOOL finished))completedBlock
                      cancelled:(void (^)())cancelBlock;
+-(void)cancelGIFDownload;
 @end
